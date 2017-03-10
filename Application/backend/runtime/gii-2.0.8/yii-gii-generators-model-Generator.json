@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+{"template":"default","enableI18N":"0","messageCategory":"app","ns":"common\\models","db":"db","baseClass":"yii\\db\\ActiveRecord","generateRelations":"all","generateLabelsFromComments":"0","queryNs":"common\\models","queryBaseClass":"yii\\db\\ActiveQuery"}
+=======
+{"template":"default","enableI18N":"0","messageCategory":"app","ns":"backend\\models","db":"db","baseClass":"yii\\db\\ActiveRecord","generateRelations":"all","generateLabelsFromComments":"0","queryNs":"backend\\models","queryBaseClass":"yii\\db\\ActiveQuery"}
+>>>>>>> e664556d098812258cd5c5832b86674cf752fc52
