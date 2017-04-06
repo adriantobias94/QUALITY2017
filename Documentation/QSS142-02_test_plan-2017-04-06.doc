@@ -1,0 +1,1548 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>testplan APC - Student Assistant System</title>
+<link type="text/css" rel="stylesheet" href="http://gnuhealth.ioss.com.ph/testlink/gui/themes/default/css/tl_documents.css" />
+<style type="text/css" media="print">.notprintable { display:none;}</style>
+</head>
+<body>
+<div>
+<div style="float:right;">TestLink Community [configure $tlCfg-&gt;document_generator-&gt;company_name]</div>
+<div>&nbsp;</div><hr />
+<p style="text-align: center;"><img alt="TestLink logo" title="configure using $tlCfg->document_generator->company_logo" height="53" src="http://gnuhealth.ioss.com.ph/testlink/gui/themes/default/images/tl-logo-transparent-25.png" /></div>
+<div class="doc_title"><p>Test Plan Design Report</p></div>
+<div class="doc_title" style="text-align:left;margin: auto;"><p>Test Project: 2017-3-T-Q-ss142-02<br>Test Plan: APC - Student Assistant System</p></div>
+<div class="summary"><p id="printedby">Printed by TestLink on 06/04/2017</p></div>
+<div class="pagefooter" id="copyright">2012 &copy; TestLink Community</div>
+<h1 class="general" style="page-break-before: always">Table Of Contents</h1><div class="toc"><b><p style="padding-left: 10px;"><a href="#toc_1_1">1.1.Iteration 0</a></p></b>
+<br><b><p style="padding-left: 20px;"><a href="#toc_1_1_1">1.1.1.Log in , Log out</a></p></b>
+<p style="padding-left: 45px;"><a href="#toc_tc3223">QSS142-02-17: Successful SAS Log-in</a></p><p style="padding-left: 45px;"><a href="#toc_tc4131">QSS142-02-32: Verify when User enters the wrong username</a></p><p style="padding-left: 45px;"><a href="#toc_tc4136">QSS142-02-33: Verify when User enters the wrong password</a></p><br><b><p style="padding-left: 20px;"><a href="#toc_1_1_2">1.1.2.Announcement Module</a></p></b>
+<p style="padding-left: 45px;"><a href="#toc_tc4151">QSS142-02-35: Verify when Discipline Office Head enters the wrong value in Update Page of Announcement Module</a></p><p style="padding-left: 45px;"><a href="#toc_tc4146">QSS142-02-34: Verify when Discipline Office Head enters the wrong value in Create Page of Announcement Module</a></p><p style="padding-left: 45px;"><a href="#toc_tc3445">QSS142-02-21: Verify when Discipline Office Head creates Announcement</a></p><p style="padding-left: 45px;"><a href="#toc_tc3452">QSS142-02-22: Verify when User views Announcement</a></p><p style="padding-left: 45px;"><a href="#toc_tc3456">QSS142-02-23: Verify when Discipline Office Head deletes Announcement</a></p><p style="padding-left: 45px;"><a href="#toc_tc3458">QSS142-02-24: Verify when Discipline Office Head updates Announcement</a></p><p style="padding-left: 45px;"><a href="#toc_tc4565">QSS142-02-42: Verify when Discipline Office Head creates Announcement with Incomplete data</a></p><br><b><p style="padding-left: 20px;"><a href="#toc_1_1_3">1.1.3.Time Rendered Module</a></p></b>
+<p style="padding-left: 45px;"><a href="#toc_tc4555">QSS142-02-40: Verify when User tries to Fill up Rendering Form with incomplete data</a></p><p style="padding-left: 45px;"><a href="#toc_tc3483">QSS142-02-27: Verify when Discipline Office Head views Time Rendered</a></p><p style="padding-left: 45px;"><a href="#toc_tc3487">QSS142-02-28: Verify when Discipline Office Head reviews Time Rendered</a></p><p style="padding-left: 45px;"><a href="#toc_tc4454">QSS142-02-37: Verify when User tries to delete record in Delete Page of Time Rendered Module</a></p><p style="padding-left: 45px;"><a href="#toc_tc4485">QSS142-02-39: Verify when Student Assistant tries to Update information in the Time Rendered Module using a link</a></p><br><b><p style="padding-left: 20px;"><a href="#toc_1_1_4">1.1.4.Student Assistants</a></p></b>
+<p style="padding-left: 45px;"><a href="#toc_tc4022">QSS142-02-30: Verify when Discipline Office Head views for Student</a></p><p style="padding-left: 45px;"><a href="#toc_tc4594">QSS142-02-43: Verify when Student Assistant tries to export Report</a></p><p style="padding-left: 45px;"><a href="#toc_tc4561">QSS142-02-41: Verify when Student Assistant tries to View all SA information</a></p><p style="padding-left: 45px;"><a href="#toc_tc3995">QSS142-02-29: Verify when Discipline Office Head views for available Student Assistants</a></p><p style="padding-left: 45px;"><a href="#toc_tc3480">QSS142-02-26: Verify when Discipline Office Head views Student Assistant</a></p><p style="padding-left: 45px;"><a href="#toc_tc3478">QSS142-02-25: Verify when Discipline Office Head request for Student Assistant</a></p><p style="padding-left: 45px;"><a href="#toc_tc4471">QSS142-02-38: Verify when User tries to delete record in Delete Page of Student Assistant Module</a></p><br><b><p style="padding-left: 20px;"><a href="#toc_1_1_5">1.1.5.Reserve Module</a></p></b>
+<p style="padding-left: 45px;"><a href="#toc_tc3441">QSS142-02-20: Verify when Student Assistant views reserve record</a></p><p style="padding-left: 45px;"><a href="#toc_tc3240">QSS142-02-19: Verify when Student Assistant reserve for an Office</a></p><p style="padding-left: 45px;"><a href="#toc_tc5356">QSS142-02-46: Verify when Discipline Office Head creates reserve record with incorrect data</a></p><p style="padding-left: 45px;"><a href="#toc_tc5371">QSS142-02-49: Verify when Discipline Office Head updates reserve record</a></p><p style="padding-left: 45px;"><a href="#toc_tc5417">QSS142-02-52: Verify when Discipline Office Head deletes reserve record</a></p><br><b><p style="padding-left: 20px;"><a href="#toc_1_1_6">1.1.6.Record Module</a></p></b>
+<p style="padding-left: 45px;"><a href="#toc_tc4043">QSS142-02-31: Verify when Discipline Office Head generates record</a></p><br><b><p style="padding-left: 20px;"><a href="#toc_1_1_7">1.1.7.Employee</a></p></b>
+<p style="padding-left: 45px;"><a href="#toc_tc5321">QSS142-02-44: Verify when System Admin submits Add Employee record with incorrect data</a></p><p style="padding-left: 45px;"><a href="#toc_tc5350">QSS142-02-45: Verify when System Admin updates a record in Employee module</a></p><p style="padding-left: 45px;"><a href="#toc_tc5366">QSS142-02-48: Verify when System Admin creates a new record in Employee module</a></p><p style="padding-left: 45px;"><a href="#toc_tc5378">QSS142-02-50: Verify when System Admin view list of Employees</a></p><p style="padding-left: 45px;"><a href="#toc_tc5381">QSS142-02-51: Verify when System Admin deletes an employee under Employee module</a></p><p style="padding-left: 30px;"><a href="#toc_tc4160">QSS142-02-36: Verify when User tries to delete record in Delete Page of Announcement Module</a></p><b><p style="padding-left: 10px;"><a href="#toc_1_2">1.2.Iteration 1</a></p></b>
+<br><b><p style="padding-left: 20px;"><a href="#toc_1_2_1">1.2.1.Student</a></p></b>
+<p style="padding-left: 45px;"><a href="#toc_tc7448">QSS142-02-53: Verify when System Admin creates Student record</a></p><p style="padding-left: 45px;"><a href="#toc_tc7454">QSS142-02-54: Verify when System Admin views Student record</a></p><p style="padding-left: 45px;"><a href="#toc_tc7458">QSS142-02-55: Verify when System Admin updates Student record</a></p><p style="padding-left: 45px;"><a href="#toc_tc7463">QSS142-02-56: Verify when System Admin deletes Student record</a></p><p style="padding-left: 45px;"><a href="#toc_tc7468">QSS142-02-57: Verify when System Admin enters wrong data in create Student</a></p><p style="padding-left: 45px;"><a href="#toc_tc7473">QSS142-02-58: Verify when System Admin updates Student record with wrong data</a></p><br><b><p style="padding-left: 20px;"><a href="#toc_1_2_2">1.2.2.Student Scholar</a></p></b>
+<p style="padding-left: 45px;"><a href="#toc_tc7479">QSS142-02-59: Verify when System Admin creates Student Scholarship record</a></p><p style="padding-left: 45px;"><a href="#toc_tc7484">QSS142-02-60: Verify when System Admin views Student Scholarship record</a></p><p style="padding-left: 45px;"><a href="#toc_tc7488">QSS142-02-61: Verify when System Admin updates Student Scholarship record</a></p><p style="padding-left: 45px;"><a href="#toc_tc7493">QSS142-02-62: Verify when System Admin deletes Student Scholarship record</a></p><p style="padding-left: 45px;"><a href="#toc_tc7498">QSS142-02-63: Verify when System Admin creates Student Scholarship record with wrong data</a></p><br><b><p style="padding-left: 20px;"><a href="#toc_1_2_3">1.2.3.Course Record</a></p></b>
+<p style="padding-left: 45px;"><a href="#toc_tc7603">QSS142-02-64: Verify when System Admin creates Course Record</a></p><p style="padding-left: 45px;"><a href="#toc_tc7608">QSS142-02-65: Verify when System Admin views Course Record</a></p><p style="padding-left: 45px;"><a href="#toc_tc7620">QSS142-02-66: Verify when System Admin updates Course Record</a></p><p style="padding-left: 45px;"><a href="#toc_tc7628">QSS142-02-67: Verify when System Admin deletes Course Record</a></p><br><b><p style="padding-left: 20px;"><a href="#toc_1_2_4">1.2.4.Department Record</a></p></b>
+<p style="padding-left: 45px;"><a href="#toc_tc7643">QSS142-02-68: Verify when System Admin creates Department Record</a></p><p style="padding-left: 45px;"><a href="#toc_tc7654">QSS142-02-69: Verify when System Admin views Department Record</a></p><p style="padding-left: 45px;"><a href="#toc_tc7658">QSS142-02-70: Verify when System Admin updates Department Record</a></p><p style="padding-left: 45px;"><a href="#toc_tc7663">QSS142-02-71: Verify when System Admin deletes Department Record</a></p><br><b><p style="padding-left: 20px;"><a href="#toc_1_2_5">1.2.5.Job Post</a></p></b>
+<p style="padding-left: 45px;"><a href="#toc_tc8529">QSS142-02-72: Verify when Employee Adds a Job Post</a></p><p style="padding-left: 45px;"><a href="#toc_tc8532">QSS142-02-73: Verify when Employee alters a Job Post Record</a></p><p style="padding-left: 45px;"><a href="#toc_tc8534">QSS142-02-74: Verify when Employee views a Job Post Record</a></p><p style="padding-left: 45px;"><a href="#toc_tc8536">QSS142-02-75: Verify when Employee deletes a Job Post Record</a></p><p style="padding-left: 45px;"><a href="#toc_tc8586">QSS142-02-76: Verify when Employee adds a Job Post w/ wrong data</a></p><p style="padding-left: 45px;"><a href="#toc_tc8591">QSS142-02-77: Verify when Employee alters a Job Post Record w/ wrong data</a></p><p style="padding-left: 45px;"><a href="#toc_tc8596">QSS142-02-78: Verify when Employee adds a Job Post w/ incorrect date time frame</a></p></div><h1 class="doclevel" style="page-break-before: avoid;"  >Test Plan: APC - Student Assistant System</h1>
+<div class="txtlevel"><p>
+	Student Assistant</p></div>
+ <br/><p></p><a name='toc_QSS142-02'></a>
+<h1 class='doclevel'>1.1.Test Suite : Iteration 0</h1>
+<a name='toc_QSS142-02'></a>
+<h1 class='doclevel'>1.1.1.Test Suite : Log in , Log out</h1>
+<div><p>
+	Logging in and logging out&nbsp;</p>
+</div><a name="toc_tc3223"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-17: Successful SAS Log-in</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	When the user successfully logs-in to the SAS by inputting a valid username and password.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	The user must have an existing and valid account with a username and password.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	The user enters the url of the website</p>
+</td><td><p>
+	Displays the Log In Page</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	The user enters username and password</p>
+</td><td><p>
+	Displays the Announcement Page</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3">2.00</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">High</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS10:  Log in<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc4131"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-32: Verify when User enters the wrong username</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last edit by:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when the User enters the wrong username</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have access to the site</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At site page, User enters wrong username</p>
+</td><td><p>
+	System displays &quot;Invalid username/password&quot;</p>
+<p>
+	&nbsp;</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc4136"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-33: Verify when User enters the wrong password</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when the User enters the wrong password</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have access to the site</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User enters the wrong password</p>
+</td><td><p>
+	System displays the &quot;Invalid username/password&quot;</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name='toc_QSS142-02'></a>
+<h1 class='doclevel'>1.1.2.Test Suite : Announcement Module</h1>
+<div><p>
+	In this area, it will show all the related Announcement pages.</p>
+</div><a name="toc_tc4151"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-35: Verify when Discipline Office Head enters the wrong value in Update Page of Announcement Module</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last edit by:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when the Discipline Office Head tries to update record but the Discipline Office Head entered the wrong value</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have privileges</p>
+<p>
+	User must have account</p>
+<p>
+	User must be logged in&nbsp;</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User click update on a specific record in the Announcement Module</p>
+</td><td><p>
+	System displays update page of Announcement &nbsp;module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User enters wrong data on update form</p>
+</td><td><p>
+	System displays error message of wrong field</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc4146"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-34: Verify when Discipline Office Head enters the wrong value in Create Page of Announcement Module</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last edit by:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when the Discipline Office Head enters the wrong value in the form</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have privileges</p>
+<p>
+	User must have account</p>
+<p>
+	User must be logged in</p>
+<p>
+	&nbsp;</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At create page, User enters the wrong value in a specific field</p>
+</td><td><p>
+	System displays error message of wrong value for the specific field</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc3445"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-21: Verify when Discipline Office Head creates Announcement</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when the Discipline Office Head creates an Annoucement Record.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have privileges to create record</p>
+<p>
+	User must have an account</p>
+<p>
+	User must be logged in</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Announcement Module</p>
+<p>
+	&nbsp;</p>
+</td><td><p>
+	System displays listview of Annoucement records</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on Add record</p>
+</td><td><p>
+	System displays fields to be completed by User</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User clicks on &quot;submit&quot; button</p>
+</td><td><p>
+	System saves the record and user is redirected to listview page</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS04:  Create Announcements<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc3452"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-22: Verify when User views Announcement</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last edit by:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when User views Announcements</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User should have an account</p>
+<p>
+	User must be logged in</p>
+<p>
+	&nbsp;</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, user clicks on Annoucement Tab</p>
+</td><td><p>
+	System displays announcements if there are any</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3">5.00</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS04:  Create Announcements<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc3456"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-23: Verify when Discipline Office Head deletes Announcement</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when Discipline Office Head deletes specific record in Announcement Module</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have an account</p>
+<p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, Discipline Office Head clicks on Announcement Page</p>
+</td><td><p>
+	System displays Announcement Module listview</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	Discipline Office Head clicks on delete on a specific record</p>
+</td><td><p>
+	System prompts on confirmation for delete and deletes record</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS04:  Create Announcements<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc3458"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-24: Verify when Discipline Office Head updates Announcement</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when Discipline Office Head wants to update a specific record</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have an accout</p>
+<p>
+	User must be logged in</p>
+<p>
+	User must have privilege</p>
+<p>
+	Record must exist</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Announcement Module</p>
+</td><td><p>
+	System displays listview of all Announcement records</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on Update icon in a specific record</p>
+</td><td><p>
+	System redirects User to specific form of the record</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User fills up form and submits</p>
+</td><td><p>
+	System successfully applies the changes made in the record</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3">5.00</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc4565"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-42: Verify when Discipline Office Head creates Announcement with Incomplete data</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	<span style="font-family: &quot;Trebuchet MS&quot;, Arial, Verdana, sans-serif; font-size: 11.7px; background-color: rgb(238, 238, 238);">The Discipline Office Head creates record where Announcement is created.&nbsp;</span></p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in.</p>
+<p>
+	Data is required to be filled up.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	<span style="font-family: &quot;Trebuchet MS&quot;, Arial, Verdana, sans-serif; font-size: 11.7px; background-color: rgb(238, 238, 238);">User submits form with incomplete data.</span></p>
+</td><td><p>
+	System highlights missing fields.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name='toc_QSS142-02'></a>
+<h1 class='doclevel'>1.1.3.Test Suite : Time Rendered Module</h1>
+<a name="toc_tc4555"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-40: Verify when User tries to Fill up Rendering Form with incomplete data</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	<span style="font-family: &quot;Trebuchet MS&quot;, Arial, Verdana, sans-serif; font-size: 11.7px; background-color: rgb(238, 238, 238);">The student fills up a form where his/her schedule for student assistant will be entered.</span></p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have access.</p>
+<p>
+	User must be logged in.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User submits form with incomplete data.</p>
+</td><td><p>
+	System highlights missing fields.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc3483"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-27: Verify when Discipline Office Head views Time Rendered</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when the Discipline Office Head views the Time Rendered Module</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Time Rendered Module</p>
+</td><td><p>
+	System displays Time rendered Module</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS06:  Verifying of Time Rendered<br />SAS08:  View Time Remaining and Hours Rendered<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc3487"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-28: Verify when Discipline Office Head reviews Time Rendered</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when Discipline Office Head checks for Time Rendered</p>
+<p>
+	&nbsp;</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have privilege</p>
+<p>
+	User must be logged in&nbsp;</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Time Rendered&nbsp;</p>
+</td><td><p>
+	System displays Time Rendered listview</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on specific Time Rendered record</p>
+</td><td><p>
+	System prompts User to reject or to accept</p>
+</td></tr><tr><td width="5">4</td><td><p>
+	User clicks on specific on specific decision</p>
+</td><td><p>
+	System either display Time Rendered Approved or Time Rendered Denied</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS06:  Verifying of Time Rendered<br />SAS08:  View Time Remaining and Hours Rendered<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc4454"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-37: Verify when User tries to delete record in Delete Page of Time Rendered Module</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	<span style="font-family: &quot;Trebuchet MS&quot;, Arial, Verdana, sans-serif; font-size: 11.7px; background-color: rgb(238, 238, 238);">This is for when a User tries to delete a certain record but he/she isn&#39;t allowed the delete action</span></p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p style="margin-top: 0px; font-family: &quot;Trebuchet MS&quot;, Arial, Verdana, sans-serif; font-size: 11.7px; background-color: rgb(238, 238, 238);">
+	User must have privilege</p>
+<p style="font-family: &quot;Trebuchet MS&quot;, Arial, Verdana, sans-serif; font-size: 11.7px; background-color: rgb(238, 238, 238);">
+	User must be logged in</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User clicks on deleted function without sufficient privilege</p>
+</td><td><p>
+	System displays &quot;Forbidden request&quot; error</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc4485"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-39: Verify when Student Assistant tries to Update information in the Time Rendered Module using a link</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last edit by:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	When user with Student Assistant Role tries to update information in the Time Rendered Module of the system.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have Role of Student Assistant</p>
+<p>
+	User must be logged-in</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User enters a link that allows to update in the Time Rendered module</p>
+</td><td><p>
+	HTTP Request will send a 403 Forbiden Access page</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">High</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS08:  View Time Remaining and Hours Rendered<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name='toc_QSS142-02'></a>
+<h1 class='doclevel'>1.1.4.Test Suite : Student Assistants</h1>
+<a name="toc_tc4022"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-30: Verify when Discipline Office Head views for Student</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last edit by:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when the Discipline Office Head views for the list of Students available</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have account</p>
+<p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Student Module</p>
+</td><td><p>
+	System displays listview of Student Module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User submits the number of Student for list and clicks on submit</p>
+</td><td><p>
+	System displays the number of records per request of the user</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc4594"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-43: Verify when Student Assistant tries to export Report</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last edit by:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	When SA tries to export a report meant for the SA Supervisor</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have role of Student Assistant</p>
+<p>
+	User must be logged-in</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	Student Assistant uses a link that would try to export a report</p>
+</td><td><p>
+	System sends 403 Forbidden Access Error page</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS12:  Request Report<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc4561"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-41: Verify when Student Assistant tries to View all SA information</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last edit by:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	When a user with role of Student Assistant tries to access the view page of all the information of the Student Assistants</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have role of Student Assistant</p>
+<p>
+	User must be logged in</p>
+<p>
+	&nbsp;</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User with role of Student Assistant clicks on view all information of SA ( or uses a link that would access the view all info. page)</p>
+</td><td><p>
+	System sends a 403 Forbidden Access Error page</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">High</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS07:  View all information<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc3995"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-29: Verify when Discipline Office Head views for available Student Assistants</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last edit by:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when the Discipline Office Head views for the available Student Assistants for rendering of hours</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have account</p>
+<p>
+	User must be logged in</p>
+<p>
+	User must have privileges</p>
+<p>
+	&nbsp;</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Student Assistant Module</p>
+</td><td><p>
+	System shows the listview for Student Assistant Module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User enters the specific number of Student Assistant with unrendered or remaining hours and submits</p>
+</td><td><p>
+	System extracts the information from the given query and presents the available records</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc3480"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-26: Verify when Discipline Office Head views Student Assistant</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last edit by:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when the Discipline Office Head wants to check the list of Student Assistant</p>
+<p>
+	&nbsp;</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have privilege</p>
+<p>
+	User must be logged in</p>
+<p>
+	&nbsp;</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Student Assistant</p>
+</td><td><p>
+	User is redirected to Student Assistant Page, system presents listview to User</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS11:  Request for Student Assistants<br />SAS07:  View all information<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc3478"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-25: Verify when Discipline Office Head request for Student Assistant</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when the Discipline Office Head request for Student Assistant</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have privileges</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS11:  Request for Student Assistants<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc4471"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-38: Verify when User tries to delete record in Delete Page of Student Assistant Module</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	<span style="font-family: &quot;Trebuchet MS&quot;, Arial, Verdana, sans-serif; font-size: 11.7px; background-color: rgb(238, 238, 238);">This is for when a User tries to delete a certain record but he/she isn&#39;t allowed the delete action</span></p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><table class="simple" style="background: rgb(238, 238, 238); border-width: thin; border-style: solid; border-color: black; font-size: 11.7px; margin: 5px; width: 910px; font-family: &quot;Trebuchet MS&quot;, Arial, Verdana, sans-serif;">
+	<tbody>
+		<tr>
+			<th class="bold" colspan="6" style="padding: 5px 3px 4px 5px; vertical-align: top; overflow: hidden; color: rgb(21, 66, 139); font-stretch: normal; font-size: 11px; font-family: tahoma, arial, verdana, sans-serif; border-style: solid; border-color: rgb(153, 187, 232); line-height: 15px; background: url(&quot;../images/white-top-bottom.gif&quot;) 0px -1px repeat-x rgb(205, 222, 243); text-align: left;">
+				Preconditions</th>
+		</tr>
+		<tr>
+			<td colspan="6" style="vertical-align: top;">
+				<p style="margin-top: 0px;">
+					User must have privilege</p>
+				<p>
+					User must be logged in</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	&nbsp;</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User clicks on delete function without sufficient privilege</p>
+</td><td><p>
+	System displays &quot;Forbidden request&quot; error</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name='toc_QSS142-02'></a>
+<h1 class='doclevel'>1.1.5.Test Suite : Reserve Module</h1>
+<a name="toc_tc3441"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-20: Verify when Student Assistant views reserve record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when a Student Assistant tries to access the records under the Reserve Module</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User should have account</p>
+<p>
+	User should have sufficient privilege</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, user clicks on Reserve Module</p>
+</td><td><p>
+	System displays listview of Reserve Module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks view function on specific record</p>
+</td><td><p>
+	System displays specific record information</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3">4.00</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS05:  Reserve for an Office<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc3240"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-19: Verify when Student Assistant reserve for an Office</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	When user clicks the reserve button for any Student Assistant related available tasks</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User should have account</p>
+<p>
+	User must have hours left</p>
+<p>
+	User must have Student Assistant Role</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, user clicks on Reserve Module</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</td><td><p>
+	System displays listview of Reserve Module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on Add Record in Reserve Module</p>
+</td><td><p>
+	System displays field to be completed by the user</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User clicks on &quot;Submit&quot; Button</p>
+</td><td><p>
+	The system saves the record and presents the record in the listview of Record Module</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS05:  Reserve for an Office<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc5356"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-46: Verify when Discipline Office Head creates reserve record with incorrect data</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, Discipline Office Head clicks on Reserve module</p>
+</td><td><p>
+	System displays reserve listview</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on Add Record</p>
+</td><td><p>
+	System displays reserve module form</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User enters wrong data in form</p>
+</td><td><p>
+	System prompts the wrong field</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc5371"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-49: Verify when Discipline Office Head updates reserve record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, user clicks on Reserve Module Page</p>
+</td><td><p>
+	System displays Reserve Module Page</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on Update on a specific record</p>
+</td><td><p>
+	System displays form of record</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User clicks on submit</p>
+</td><td><p>
+	System applies changes to the database</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc5417"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-52: Verify when Discipline Office Head deletes reserve record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last edit by:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, Discipline Office Head clicks on Reserve Module</p>
+</td><td><p>
+	System displays listview of Reserve Module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	Discipline Office Head clicks Delete on specific record</p>
+</td><td><p>
+	System prompts User to delete or not</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	Discipline Office Head clicks on Delete</p>
+</td><td><p>
+	System deletes the record and commits the database</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name='toc_QSS142-02'></a>
+<h1 class='doclevel'>1.1.6.Test Suite : Record Module</h1>
+<a name="toc_tc4043"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-31: Verify when Discipline Office Head generates record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last edit by:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This test case is for when Discipline Office Head generates report for specific report</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on specific module</p>
+</td><td><p>
+	System displays the specific module chosen by the User</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on generate report</p>
+</td><td><p>
+	System displays query form to generate a specific report</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User enters the query and clicks submit</p>
+</td><td><p>
+	System generates the report and either saves it in the website or create a downloadable file.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS12:  Request Report<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name='toc_QSS142-02'></a>
+<h1 class='doclevel'>1.1.7.Test Suite : Employee</h1>
+<a name="toc_tc5321"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-44: Verify when System Admin submits Add Employee record with incorrect data</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	When System Admin tries to submit an Add Employee record with wrong data</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in to the system</p>
+<p>
+	User must have role of System Admin</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	System Admin will navigate to the employee module</p>
+</td><td><p>
+	Display Employee module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	System Admin will click on add new record</p>
+</td><td><p>
+	Display Add Employee page with the designated fields</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	System Admin enters and submits incorrect data (e.g. letters in a phone number field)</p>
+</td><td><p>
+	Highlight fields that have incorrect data or are missing data</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">SAS16:  Add Employee<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc5350"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-45: Verify when System Admin updates a record in Employee module</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	when System Admin updates a record in Employee module</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have role of System Admin</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	System Admin navigates to Employee module</p>
+</td><td><p>
+	System displays list view of Employee module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	System Admin clicks on Edit on an existing record</p>
+</td><td><p>
+	Display Edit Record page of the selected record</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	System Admin clicks on submit after updating data in a certain field</p>
+</td><td><p>
+	Saves changes of the record and return to Employee List View page</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc5366"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-48: Verify when System Admin creates a new record in Employee module</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	System Admin adds a new employee under the Employee module</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have role of System Admin</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	System Admin navigates to Employee Module</p>
+</td><td><p>
+	Display the list view page of Employee module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	System Admin clicks on <em>Add new record</em></p>
+</td><td><p>
+	Display Add Employee page containing fields</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	System Admin enters complete data and clicks on submit</p>
+</td><td><p>
+	System accepts the data and saves the new employee record</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">High</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc5378"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-50: Verify when System Admin view list of Employees</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	List view page of Employee module</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have role of System Admin</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	System Admin navigates to Employee module</p>
+</td><td><p>
+	Display list view of Employee module</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">High</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc5381"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-51: Verify when System Admin deletes an employee under Employee module</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	When System Admin deletes an employee</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have role of System Admin</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	System Admin navigates to Employee module</p>
+</td><td><p>
+	Display list view of Employee module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	System Admin clicks on delete to delete a record</p>
+</td><td><p>
+	Display a page that validates the record to be deleted</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	System Admin clicks on Delete</p>
+</td><td><p>
+	System deletes the employee record</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">High</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc4160"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-36: Verify when User tries to delete record in Delete Page of Announcement Module</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last edit by:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is for when a User tries to delete a certain record but he/she isn&#39;t allowed the delete action</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have privilege</p>
+<p>
+	User must be logged in</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User clicks on delete function without sufficient privilege</p>
+</td><td><p>
+	System displays &quot;Forbidden request&quot; error</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name='toc_QSS142-02'></a>
+<h1 class='doclevel'>1.2.Test Suite : Iteration 1</h1>
+<a name='toc_QSS142-02'></a>
+<h1 class='doclevel'>1.2.1.Test Suite : Student</h1>
+<a name="toc_tc7448"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-53: Verify when System Admin creates Student record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is for when a System Admin tries to create a Student entity</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Student module link</p>
+</td><td><p>
+	Student module listview is presented when link is clicked</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on &quot;Add record&quot;</p>
+</td><td><p>
+	System displays &quot;Student&quot; form</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User clicks on submit</p>
+</td><td><p>
+	System saves the record into the database</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7454"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-54: Verify when System Admin views Student record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when a System Admin tries to see all information of a certain record</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have the right privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Student Module</p>
+</td><td><p>
+	System will display listview of Student</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on &quot;view&quot; button on one record</p>
+</td><td><p>
+	System will redirect user to specific information</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7458"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-55: Verify when System Admin updates Student record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when a System Admin wants to update a record</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Student Module</p>
+</td><td><p>
+	System displays Student Module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on &quot;update&quot; on specific record</p>
+</td><td><p>
+	System displays record form with past data</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User updates information and clicks on submit</p>
+</td><td><p>
+	System commits the changes</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7463"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-56: Verify when System Admin deletes Student record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when a System Admin tries to delete a certain record</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Student Module</p>
+</td><td><p>
+	System displays Student Module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on delete on a specific record</p>
+</td><td><p>
+	System prompts on if User wants to delete record</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User clicks on &quot;delete&quot;</p>
+</td><td><p>
+	System deletes record</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7468"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-57: Verify when System Admin enters wrong data in create Student</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when the System Admin creates a record but with wrong information</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Student Module</p>
+</td><td><p>
+	System displays listview of Student Module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on &quot;Add Record&quot;</p>
+</td><td><p>
+	System displays form of Student</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User enters the wrong information and submits</p>
+</td><td><p>
+	System highlights the error field</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7473"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-58: Verify when System Admin updates Student record with wrong data</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when a System Admin enters the wrong information on update record of Student</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must have privileges</p>
+<p>
+	User must be logged in</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Student Module</p>
+</td><td><p>
+	System displays Student Module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on update in a specific record</p>
+</td><td><p>
+	System displays Student form with past data</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User enters the wrong information and submits</p>
+</td><td><p>
+	System displays and highlights the error field&nbsp;</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name='toc_QSS142-02'></a>
+<h1 class='doclevel'>1.2.2.Test Suite : Student Scholar</h1>
+<a name="toc_tc7479"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-59: Verify when System Admin creates Student Scholarship record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when a user clicks on create of Student Scholarship</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in&nbsp;</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Student Scholarship Module</p>
+</td><td><p>
+	System displays listview of Student Scholarshin Module</p>
+<p>
+	&nbsp;</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on &quot;Add Record&quot;</p>
+</td><td><p>
+	System displays Student Scholarship form</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User fills up form and clicks submit</p>
+</td><td><p>
+	System saves the information as a record</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7484"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-60: Verify when System Admin views Student Scholarship record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when the System Admin views a certain record</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	Users must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Student Scholarship</p>
+</td><td><p>
+	System shows listview of Student Scholarship</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on view on a specific record</p>
+</td><td><p>
+	System shows the information of one record</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7488"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-61: Verify when System Admin updates Student Scholarship record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when the System Admin updates the Student Scholarship page</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Student Scholarship Module</p>
+</td><td><p>
+	System displays listview of Student Scholarship Module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on update on a specific record</p>
+</td><td><p>
+	System displays form with past data</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User enters the data and clicks on submit</p>
+</td><td><p>
+	System commits the changes</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7493"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-62: Verify when System Admin deletes Student Scholarship record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when the System Admin deletes a Student Scholarship record</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Student Scholarship Module</p>
+</td><td><p>
+	System redirects to listview of Student Scholarship Module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on delete on a specific record</p>
+</td><td><p>
+	System prompts user Yes or No on delete</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User clicks on Yes</p>
+</td><td><p>
+	System deletes the record</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7498"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-63: Verify when System Admin creates Student Scholarship record with wrong data</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">jddeguzman</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when System Admin creates a record with wrong data</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Student Scholarship Module</p>
+</td><td><p>
+	System displays listview of Student Scholarship Module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on &quot;Add Record&quot;</p>
+</td><td><p>
+	System displays Student Scholarship form</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User enters wrong data and clicks on submit</p>
+</td><td><p>
+	System highlights the wrong fields</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name='toc_QSS142-02'></a>
+<h1 class='doclevel'>1.2.3.Test Suite : Course Record</h1>
+<a name="toc_tc7603"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-64: Verify when System Admin creates Course Record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when the System Admin creates a course record in Course Record module</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Course Module</p>
+</td><td><p>
+	System redirects user to listview</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on &quot;Add Record&quot;</p>
+</td><td><p>
+	System displays form of Course Module</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User fills up form and submits</p>
+</td><td><p>
+	System saves record in database</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7608"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-65: Verify when System Admin views Course Record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when the System Admin views a course record</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have privileges</p>
+<p>
+	&nbsp;</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7620"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-66: Verify when System Admin updates Course Record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when a System Admin updates Course Record</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Course Record Module</p>
+</td><td><p>
+	System displays Course Record Module</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on update on a specific record&nbsp;</p>
+</td><td><p>
+	System displays record form with past data</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User fills up form with updated information and clicks submit&nbsp;</p>
+</td><td><p>
+	System commits into database</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7628"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-67: Verify when System Admin deletes Course Record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when System Admin deletes Course Record</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name='toc_QSS142-02'></a>
+<h1 class='doclevel'>1.2.4.Test Suite : Department Record</h1>
+<a name="toc_tc7643"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-68: Verify when System Admin creates Department Record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when a System Admin creates a Department Record</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7654"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-69: Verify when System Admin views Department Record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when the System Admin views any available Department Record</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Department Record Module</p>
+</td><td><p>
+	System displays listview of Department Record</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on view button on Department Record</p>
+</td><td><p>
+	System displays information of specific record</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7658"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-70: Verify when System Admin updates Department Record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when a System Admin updates a specific record</p>
+<p>
+	&nbsp;</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Department Record</p>
+</td><td><p>
+	System displays listview of Department Record</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on update button</p>
+</td><td><p>
+	System displays record form with past data</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User fills up form with information and clicks submit</p>
+</td><td><p>
+	System commits changes into database</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc7663"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-71: Verify when System Admin deletes Department Record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">adtobias</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is when the System Admin deletes a Department Record&nbsp;</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in</p>
+<p>
+	User must have sufficient privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	At home page, User clicks on Department Record</p>
+</td><td><p>
+	System displays department record listview</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on delete button on specific record</p>
+</td><td><p>
+	System prompt Yes or No on delete</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User clicks Yes on prompt</p>
+</td><td><p>
+	System deletes the record</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name='toc_QSS142-02'></a>
+<h1 class='doclevel'>1.2.5.Test Suite : Job Post</h1>
+<a name="toc_tc8529"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-72: Verify when Employee Adds a Job Post</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is to verify what happens when Employee adds a job posting</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in with Employee privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User clicks on the Job Post module</p>
+</td><td><p>
+	System Displays the Job Post module view page</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on &quot;Add new record&quot; button</p>
+</td><td><p>
+	System displays the &quot;Add Job Post&quot; page</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User provides correct and complete information on the fields and clicks &quot;submit button&quot;</p>
+</td><td><p>
+	System accepts the information and returns to the Job Post module view page</p>
+</td></tr><tr><td width="5">4</td><td><p>
+	User provides correct and complete information on the fields and clicks &quot;submit button&quot;</p>
+</td><td><p>
+	System accepts the information and returns to the Job Post module view page</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">High</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">Student Assistant System 41:  Add Job Post<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc8532"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-73: Verify when Employee alters a Job Post Record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	This is to see what will happen when a user with employee priv. alters a job post record under the Job Post module</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in with Employee priv</p>
+<p>
+	Job Post Record must exist</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User clicks on the Job Post module</p>
+</td><td><p>
+	System displays the Job Post module view page</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on the pencil icon (edit) of a specific record</p>
+</td><td><p>
+	System displays the &quot;Edit Job Post&quot; module page</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User changes or modifies any specific information on the fields of the page and clicks on the &quot;submit&quot; button</p>
+</td><td><p>
+	System accepts changes and redirects to the Job Post module view page</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">Student Assistant System 42:  Edit Job Post Record<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc8534"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-74: Verify when Employee views a Job Post Record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	Verify when Employee check an exisiting job post record</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in with Employee privileges</p>
+<p>
+	Job post record must exist</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User clicks on the Job Post module</p>
+</td><td><p>
+	System displays the Job Post module view page</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on magnifying glass icon (View) of a specific record</p>
+</td><td><p>
+	System displays &quot;Detail View: Job Post&quot; page of the chosen record</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">Student Assistant System 43:  View Job Record<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc8536"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-75: Verify when Employee deletes a Job Post Record</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	Verify when a user with employee privileges deletes an exisiting job post record</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in with Employee privileges</p>
+<p>
+	Job post record must exist</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User click on the Job Post module</p>
+</td><td><p>
+	System displays the Job Post module view page</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on the red X icon (Delete) of a specific record</p>
+</td><td><p>
+	System displays the &quot;Delete Job Post&quot; page</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User reviews the record and clicks on Delete button</p>
+</td><td><p>
+	System prompts a &quot;Are you sure you want to delete this item?&quot;</p>
+</td></tr><tr><td width="5">4</td><td><p>
+	User clicks on Okay/Yes</p>
+</td><td><p>
+	System deletes the record and returns to the Job Post module view page</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">High</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">Student Assistant System 44:  Delete Job Post Record<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc8586"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-76: Verify when Employee adds a Job Post w/ wrong data</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	Verifies what happens when a user tries to add a Job Post with wrong data</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User has to be logged in with Employee privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User clicks on the Job Post module</p>
+</td><td><p>
+	System Displays the Job Post module view page</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on &quot;Add new record&quot; button</p>
+</td><td><p>
+	System displays the &quot;Add Job Post&quot; page</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User provides data on the fields that do not match the required data type and clicks &quot;submit button&quot;</p>
+</td><td><p>
+	Display an error message and show what fields have errors</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">High</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">Student Assistant System 41:  Add Job Post<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc8591"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-77: Verify when Employee alters a Job Post Record w/ wrong data</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	Verify when Employee tries to alter a job post record with data that is wrong</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in with Employee privileges</p>
+<p>
+	Job Post Record must exist</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User clicks on the Job Post module</p>
+</td><td><p>
+	System displays the Job Post module view page</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on the pencil icon (edit) of a specific record</p>
+</td><td><p>
+	System displays the &quot;Edit Job Post&quot; module page</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User changes or modifies any specific information on the fields of the page, but adds an extra invalid character and clicks on the &quot;submit&quot; button</p>
+</td><td><p>
+	Display an error message and show which field has an error</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">Student Assistant System 42:  Edit Job Post Record<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<a name="toc_tc8596"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case QSS142-02-78: Verify when Employee adds a Job Post w/ incorrect date time frame</th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">msmayor</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>
+	Verify when a user with Employee privileges tries to add a Job Post with wrong data time frame</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>
+	User must be logged in with Employee privileges</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td></tr><tr><td width="5">1</td><td><p>
+	User clicks on the Job Post module</p>
+</td><td><p>
+	System Displays the Job Post module view page</p>
+</td></tr><tr><td width="5">2</td><td><p>
+	User clicks on &quot;Add new record&quot; button</p>
+</td><td><p>
+	System displays the &quot;Add Job Post&quot; page</p>
+</td></tr><tr><td width="5">3</td><td><p>
+	User provides incorrect time frame for the date and clicks &quot;submit button&quot;</p>
+</td><td><p>
+	System displays an error message and shows a message asking the user to review the date fields</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">Student Assistant System 41:  Add Job Post<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="3">&nbsp;None<br></td></tr>
+</table>
+</div>
+<h1 class="doclevel">Execution time metrics</h1>
+<div>
+<p>Estimated time for executing 60 test cases (min):16</p>
+<p>Time used for executing 60 test cases (hours):2.12</p>
+</div>
+
+</body>
+</html>
